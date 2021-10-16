@@ -4,6 +4,8 @@
 
 :root {
 
+  /* --------- THEME 1 --------- */
+
 --main-bg:hsl(222, 26%, 31%);
 --toggle-keypad-bg: hsl(223, 31%, 20%);
 --screen-bg: hsl(224, 36%, 15%);
@@ -23,8 +25,62 @@
 
 --grey-text: hsl(221, 14%, 31%);
 
-}
 
+
+/* --------- THEME 1 END --------- */
+
+
+
+
+/* --------- THEME 2 COLORS --------- */
+
+
+
+--main-bg-2: hsl(0, 0%, 90%);
+--toggle-keypad-bg-2: hsl(0, 5%, 81%);
+--screen-bg-2: hsl(0, 0%, 93%);
+
+--cyan-key-bg: hsl(185, 42%, 37%);
+--cyan-key-shadow: hsl(185, 58%, 25%);
+
+--orange-key-bg-toggle: hsl(25, 98%, 40%);
+--orange-key-shadow: hsl(25, 99%, 27%);
+
+--key-bg-2: hsl(45, 7%, 89%);
+--key-shadow-2: hsl(35, 11%, 61%);
+
+--yellow-text: hsl(60, 10%, 19%);
+
+
+
+/* --------- THEME 2 COLORS END ---------  */
+
+
+
+/* --------- THEME 3 COLORS  ---------  */
+
+
+
+
+--main-bg-3: hsl(268, 75%, 9%);
+--toggle-keypad-screen-bg: hsl(268, 71%, 12%);
+
+--violet-key-bg: hsl(281, 89%, 26%);
+--violet-key-shadow: hsl(285, 91%, 52%);
+
+--blue-key-bg-toggle: hsl(176, 100%, 44%);
+--blue-key-shadow: hsl(177, 92%, 70%);
+
+--key-bg-3: hsl(268, 47%, 21%);
+--key-shadow-3: hsl(290, 70%, 36%);
+
+--light-yellow-text: hsl(52, 100%, 62%);
+--dark-blue-text: hsl(198, 20%, 13%);
+
+
+/* --------- THEME 3 COLORS END ---------  */
+
+}
 
 /* GLOBAL STYLES */
 
@@ -54,6 +110,9 @@ transform: translate(-50%, 0);
 
 header {
     margin: 30px 0 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -97,7 +156,11 @@ grid-gap: 12px;
     color: var(--grey-text);
 }
 
-.grey-key {
+.key:hover {
+    cursor: pointer;
+}
+
+.acc-key {
     background: var(--grey-key-bg);
     box-shadow: 0 5px 0 var(--grey-key-shadow);
     color: #fff;
@@ -117,9 +180,153 @@ grid-gap: 12px;
     color: white;
 }
 
-.grey-key, .equal {
+.acc-key, .equal {
     font-size: 1em;
 }
+
+/* THEME TOGGLE */
+
+
+.nums {
+    display: flex;
+    justify-content: space-around;
+}
+
+.toggle {
+    background: var(--toggle-keypad-bg);
+    display: flex;
+    width: 70px;
+    height: 24px;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+input[type=radio] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+.ball {
+    background: var(--red-key-bg-toggle);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 4px;
+    visibility: hidden;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+
+.radio:checked + .label .ball {
+    visibility: visible;
+}
+
+
+/* END THEME TOGGLE */
+
+
+/* --------- THEME 2  --------- */
+
+body.v2 {
+    background: var(--main-bg-2);
+    color: var(--yellow-text);
+}
+
+#screen.v2 {
+    background: var(--screen-bg-2);
+    color: var(--yellow-text);
+}
+
+#keypad.v2 {
+    background-color: var(--toggle-keypad-bg-2);
+}
+
+.key.v2 {
+    background: var(--key-bg-2);
+    box-shadow: 0 5px 0 var(--key-shadow-2);
+    color: var(--yellow-text);
+}
+
+.acc-key.v2 {
+background: var(--cyan-key-bg);
+box-shadow: 0 5px 0 var(--cyan-key-shadow);
+color: white;
+}
+
+.equal.v2 {
+    background-color: var(--orange-key-bg-toggle);
+    box-shadow: 0 5px 0 var(--orange-key-shadow);
+}
+
+.toggle.v2 {
+background: var(--toggle-keypad-bg-2);
+}
+
+.ball.v2 {
+    background: var(--orange-key-bg-toggle);
+}
+
+/* --------- THEME 2 END --------- */
+
+
+/* --------- THEME 3  --------- */
+
+body.v3 {
+    background: var(--main-bg-3);
+    color: var(--light-yellow-text);
+}
+
+#screen.v3 {
+    background: var(--toggle-keypad-screen-bg);
+    color: var(--light-yellow-text);
+}
+
+#keypad.v3 {
+    background-color: var(--toggle-keypad-screen-bg);
+}
+
+.key.v3 {
+    background: var(--key-bg-3);
+    box-shadow: 0 5px 0 var(--key-shadow-3);
+    color: var(--light-yellow-text);
+}
+
+.acc-key.v3 {
+background: var(--violet-key-bg);
+box-shadow: 0 5px 0 var(--violet-key-shadow);
+color: white;
+}
+
+.equal.v3 {
+    background-color: var(--blue-key-bg-toggle);
+    box-shadow: 0 5px 0 var(--blue-key-shadow);
+}
+
+.toggle.v3 {
+background: var(--toggle-keypad-screen-bg);
+}
+
+.ball.v3 {
+    background: var(--blue-key-bg-toggle);
+}
+
+/* --------- THEME 3 END --------- */
+
+
+
+
+
+
+
+
+
+
+
 
 @media (min-width: 600px) {
     #keypad, #screen {
