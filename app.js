@@ -22,6 +22,7 @@ button.forEach(btn => {
                 break;
             default:
                 inputScreen.value += btn.value;
+                btn.blur()
 
         }
 
@@ -29,8 +30,24 @@ button.forEach(btn => {
 
 });
 
+// keyboard enter button functionality
+document.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.querySelector('.equal').click();
+    }
+});
 
-
+//keyboard backspace button functionality
+document.addEventListener("keyup", function (event) {
+    if (event.key === "Backspace") {
+        event.preventDefault();
+        document.querySelector('.del').click();
+    }
+});
 
 
 
